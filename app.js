@@ -7,6 +7,8 @@ import cookieParser from 'cookie-parser'
 //user defined imports
 import { connectDB } from "./src/config/db.js";
 import authRoute from './src/routes/auth.route.js'
+import productRoute from './src/routes/product.route.js'
+import cartRoute from './src/routes/cart.route.js'
 
 dotenv.config()
 const app = express()
@@ -31,7 +33,8 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/auth", authRoute)
-
+app.use("/api/product", productRoute)
+app.use("/api/cart", cartRoute)
 
 app.listen(PORT, () => {
     console.log(`server is listen on http://localhost:${PORT}`)
