@@ -11,6 +11,7 @@ import productRoute from './src/routes/product.route.js'
 import cartRoute from './src/routes/cart.route.js'
 import couponRoute from './src/routes/coupon.route.js'
 import paymentRoute from './src/routes/payment.route.js'
+import analyticsRoute from './src/routes/analytics.route.js'
 
 dotenv.config()
 const app = express()
@@ -39,6 +40,7 @@ app.use("/api/product", productRoute)
 app.use("/api/cart", cartRoute)
 app.use("/api/coupon", couponRoute);
 app.use("/api/payment", paymentRoute)
+app.use("/api/analytic", analyticsRoute)
 
 app.listen(PORT, () => {
     console.log(`server is listen on http://localhost:${PORT}`)
